@@ -3,6 +3,9 @@
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  --main-color: #1d1d1d;
+  --test-color: #7fac51;
+  --secondary-color: #47883f;
 }
 
 html, body {
@@ -62,12 +65,12 @@ color: aliceblue;
 }
 
 .data {
-background-color: #1d1d1d;
+background-color: var(--main-color);
 box-shadow:0 5px 5px #616161;
 display: flex;
 flex-flow: row wrap;  
 text-align: left;
-gap: 20px 40px;
+gap: 20px 5px;
 padding-left: 2vw;
 padding-bottom: 2vw;
 }
@@ -85,10 +88,48 @@ padding-bottom: 2vw;
 
 .data input {
   min-width: 222px;
+  max-width: 320px;
   appearance: none;
   height: 2rem;
+  border: solid;
+  border-radius: 5px;
+}
+
+.data input:focus {
+  outline: 0;
+  border-color: var(--secondary-color);
+
 }
 
 .form-title {
   width: 100%;
+}
+
+.confirm {
+  margin-top: 4vh;
+  margin-left: 2vw;
+}
+
+.confirm button {
+  width: 180px;
+  height: 70px;
+  font-size: larger;
+  font-weight: bold;
+  background-color: var(--secondary-color);
+  box-shadow: 5px 5px #7fac51;
+  border: solid var(--secondary-color) 2px;
+  border-radius: 5px;
+  margin-bottom: 1vh;
+}
+
+.confirm p, .confirm a {
+  font-size: large;
+}
+
+a {
+  text-decoration: none;
+}
+
+.confirm a {
+  color: var(--secondary-color);
 }

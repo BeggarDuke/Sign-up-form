@@ -4,8 +4,8 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   --main-color: #1d1d1d;
-  --test-color: #7fac51;
   --secondary-color: #47883f;
+  --third-color: #7fac51;
 }
 
 html, body {
@@ -62,6 +62,8 @@ color: aliceblue;
   justify-content: center;
   align-items: left;
   flex: 1 2 auto;
+  min-width: 590px;
+
 }
 
 .data {
@@ -70,7 +72,7 @@ box-shadow:0 5px 5px #616161;
 display: flex;
 flex-flow: row wrap;  
 text-align: left;
-gap: 20px 5px;
+gap: 20px 25px;
 padding-left: 2vw;
 padding-bottom: 2vw;
 }
@@ -88,7 +90,7 @@ padding-bottom: 2vw;
 
 .data input {
   min-width: 222px;
-  max-width: 320px;
+  /* max-width: 320px; */
   appearance: none;
   height: 2rem;
   border: solid;
@@ -99,6 +101,21 @@ padding-bottom: 2vw;
   outline: 0;
   border-color: var(--secondary-color);
 
+}
+
+input + span {
+  position: relative;
+}
+
+input:required + span::before {
+  content: "required";
+  position: absolute;
+  bottom: 2rem;
+  right: 5px;
+  background-color: var(--secondary-color);
+  padding: 1px 2px;
+  border-radius: 2px;
+  font-size: small;
 }
 
 .form-title {

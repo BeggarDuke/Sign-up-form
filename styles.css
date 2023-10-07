@@ -62,7 +62,7 @@ color: aliceblue;
   justify-content: center;
   align-items: left;
   flex: 1 2 auto;
-  min-width: 590px;
+  min-width: 740px;
 
 }
 
@@ -72,7 +72,7 @@ box-shadow:0 5px 5px #616161;
 display: flex;
 flex-flow: row wrap;  
 text-align: left;
-gap: 20px 25px;
+gap: 0 50px;
 padding-left: 2vw;
 padding-bottom: 2vw;
 }
@@ -82,28 +82,32 @@ padding-bottom: 2vw;
   margin-right: 10vw;
 }
 
-.data > div {
+.data div {
   display: flex;
   flex-flow: column wrap;
-  width: 40%;
+}
+
+.data > div {
+  gap: 10px 0;
+  width: 25%;
 }
 
 .data input {
   min-width: 222px;
-  /* max-width: 320px; */
   appearance: none;
   height: 2rem;
-  border: solid;
+  border: 3px solid black;
   border-radius: 5px;
+  transition: border 0.5s;
 }
 
 .data input:focus {
   outline: 0;
   border-color: var(--secondary-color);
-
+  transition: border-color 0.4s;
 }
 
-input + span {
+.data input + span {
   position: relative;
 }
 
@@ -116,6 +120,12 @@ input:required + span::before {
   padding: 1px 2px;
   border-radius: 2px;
   font-size: small;
+  transition: border-radius 0.5s;
+}
+
+input:required:focus + span::before {
+  border-radius: 2px 2px 0 0;
+  transition: border-radius 0.5s;
 }
 
 .form-title {
@@ -134,9 +144,16 @@ input:required + span::before {
   font-weight: bold;
   background-color: var(--secondary-color);
   box-shadow: 5px 5px #7fac51;
-  border: solid var(--secondary-color) 2px;
+  border: 5px solid var(--secondary-color);
   border-radius: 5px;
   margin-bottom: 1vh;
+  transition: all 1s;
+}
+
+.confirm button:hover {
+  box-shadow: 0 0 var(--third-color);
+  border: 5px solid var(--third-color);
+  transition: box-shadow 0.5s, border 1s;
 }
 
 .confirm p, .confirm a {

@@ -6,11 +6,12 @@
   --main-color: #1d1d1d;
   --secondary-color: #47883f;
   --third-color: #7fac51;
-}
-
-html, body {
   margin: 0;
   padding: 0;
+}
+
+.form h1, .form h2, .form h3, .form h4, .form p {
+  margin-bottom: 20px;
 }
 
 .main {
@@ -60,7 +61,6 @@ color: aliceblue;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: left;
   flex: 1 2 auto;
   min-width: 740px;
 
@@ -71,10 +71,8 @@ background-color: var(--main-color);
 box-shadow:0 5px 5px #616161;
 display: flex;
 flex-flow: row wrap;  
-text-align: left;
 gap: 0 50px;
-padding-left: 2vw;
-padding-bottom: 2vw;
+padding: 2vh 2vw 3vh 2vw;
 }
 
 .form > h2, .form > h3 {
@@ -166,4 +164,54 @@ a {
 
 .confirm a {
   color: var(--secondary-color);
+}
+
+.confirm a:hover {
+  color: var(--third-color);
+}
+
+.confirm p {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+
+  .main {
+    min-width: 520px;
+  }
+
+  .form > h2, .form > h3 {
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-right: 0;
+  }
+
+  .main {
+    flex-flow: column nowrap;
+  }
+
+  .image {
+    width: 100vw;
+    min-width: 100%;
+  }
+
+  .form {
+    min-width: 400px;
+  }
+
+  .data {
+    min-width: 100vw;
+    gap: 10px 0;
+    margin: 0;
+    padding: 2vh 2vw;
+  }
+
+  .data > div {
+    width: 50%;
+    gap: 10px 0;
+  }
+
+  .data input {
+    min-width: 0;
+  }
 }
